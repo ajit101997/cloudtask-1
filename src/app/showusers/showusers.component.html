@@ -1,0 +1,29 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Sr.no</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Datetime</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let x of userrecord"> 
+            <th scope="row">{{x.id}}</th>
+            <td>{{x.title}}</td>
+            <td>{{x.description}}</td>
+            <td>{{x.status}}</td>
+            <td>{{x.date}}</td>
+            <td><a routerLink="/deleteuserspage/{{x.id}}" >delete</a></td>
+            <td><a routerLink="/edituserspage/{{x.id}}" >edit</a></td>
+
+          </tr>
+         
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control"  aria-describedby="emailHelp" #x1 [value]="userrecords.title">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Description</label>
+        <textarea class="form-control"  rows="3" #x2  [value]="userrecords.description"></textarea>
+      </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Select status</label>
+        <select class="form-control" #x3  [value]="userrecords.status">
+          <option>Select Status</option>
+          <option>Open</option>
+          <option>In Progress</option>
+          <option>Completed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Datetime Stamp</label>
+        <input type="datetime" class="form-control"  aria-describedby="emailHelp" #x4  [value]="userrecords.date">
+      </div>
+    <button class="btn btn-primary" (click)="editdata(x1,x2,x3,x4)">Submit</button>
+</div>

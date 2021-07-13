@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="example-container ">
+                <h2>Open</h2>
+              
+                <div
+                  cdkDropList
+                  #todoList="cdkDropList"
+                  [cdkDropListData]="todo"
+                  [cdkDropListConnectedTo]="[doneList,completedList]"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+                </div>
+              </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="example-container">
+                <h2>Work in Progress</h2>
+              
+                <div
+                  cdkDropList
+                  #doneList="cdkDropList"
+                  [cdkDropListData]="done"
+                  [cdkDropListConnectedTo]="[todoList,completedList]"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+                </div>
+              </div>
+        </div>
+        <div class="col-xl-4">
+            <div class="example-container">
+                <h2>Completed</h2>
+              
+                <div
+                  cdkDropList
+                  #completedList="cdkDropList"
+                  [cdkDropListData]="completed"
+                  [cdkDropListConnectedTo]="[todoList,doneList]"
+                  class="example-list"
+                  (cdkDropListDropped)="drop($event)">
+                  <div class="example-box" *ngFor="let item of completed" cdkDrag>{{item}}</div>
+                </div>
+        </div>
+    </div>
+
+  
+  
+  
+  </div>
+  
+  
+</div>
